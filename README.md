@@ -94,6 +94,7 @@ https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 
 
 # 3. Change the value thru setpci
+unfortunately, the datasheet does not contain the specific value to set into the registers for each function. So you might do some tries and errors. 
 ```
 $ sudo setpci -s 06:00.0 0x78.w
 281f
