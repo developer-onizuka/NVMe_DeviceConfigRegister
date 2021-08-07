@@ -78,8 +78,8 @@ https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 
 
 
-|Bits|Type|Default|Value|Description|
-| --- | --- | --- | --- | --- |
+|Bits|Type|Default Value|Description|
+| --- | --- | --- | --- |
 |15|RW|0|Initiate Function Level Reset|
 |14:12|RW|2h|Max Read Request Size|
 |11|RW|1|Enable No Snoop|
