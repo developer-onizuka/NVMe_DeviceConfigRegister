@@ -123,19 +123,29 @@ Value = 581f (Max Read Request=4096B)
 
 ```
 $ sudo setpci -s 06:00.0 0x78.w=381f
-$ sudo lspci -x -vvv -s 06:00.00 |grep MaxPayload
-		DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+$ sudo lspci -x -vvv -s 06:00.00 |grep MaxReadReq
 			MaxPayload 128 bytes, MaxReadReq 1024 bytes
 
 $ sudo setpci -s 06:00.0 0x78.w=481f
-$ sudo lspci -x -vvv -s 06:00.00 |grep MaxPayload
-		DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+$ sudo lspci -x -vvv -s 06:00.00 |grep MaxReadReq
 			MaxPayload 128 bytes, MaxReadReq 2048 bytes
 
 $ sudo setpci -s 06:00.0 0x78.w=581f
-$ sudo lspci -x -vvv -s 06:00.00 |grep MaxPayload
-		DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+$ sudo lspci -x -vvv -s 06:00.00 |grep MaxReadReq
 			MaxPayload 128 bytes, MaxReadReq 4096 bytes
 ```
 
+
+Value = 283f (MaxPayload=256B)
+|Bit|Binary|
+| --- | --- |
+|7:5|001|
+|4|1|
+
+```
+$ sudo setpci -s 06:00.0 0x78.w=283f
+$ sudo lspci -x -vvv -s 06:00.00 |grep MaxPayload
+		DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+			MaxPayload 256 bytes, MaxReadReq 512 bytes
+```
 
