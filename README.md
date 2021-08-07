@@ -97,25 +97,25 @@ https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 $ sudo setpci -s 06:00.0 0x78.w
 281f
 ```
-Value = 281f (MaxPayload=512B)
+Value = 281f (Max Read Request=512B)
 |Bit|Binary|
 | --- | --- |
 |15|0|
 |14:12|010|
 
-Value = 381f (MaxPayload=1024B)
+Value = 381f (Max Read Request=1024B)
 |Bit|Binary|
 | --- | --- |
 |15|0|
 |14:12|011|
 
-Value = 481f (MaxPayload=2048B)
+Value = 481f (Max Read Request=2048B)
 |Bit|Binary|
 | --- | --- |
 |15|0|
 |14:12|100|
 
-Value = 581f (MaxPayload=2048B)
+Value = 581f (Max Read Request=4096B)
 |Bit|Binary|
 | --- | --- |
 |15|0|
