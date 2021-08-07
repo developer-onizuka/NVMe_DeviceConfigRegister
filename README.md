@@ -1,4 +1,4 @@
-# 1. 
+# 1. Check lspci with "-vvv" options
 ```
 $ lspci |grep -i nvme
 06:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller SM961/PM961
@@ -68,16 +68,13 @@ $ sudo lspci -x -vvv -s 06:00.00
 30: 00 00 00 00 40 00 00 00 00 00 00 00 0b 01 00 00
 ```
 
-# 2. 
+# 2. Find the datasheet of your NVMe device and UNDERSTAND IT
 According to the spec of Samsung Datasheet below, [Table 48] PCI Express Capability Summary says "78h" is a start address of "PCI Express Device Capabilities". 
 We can learn that [14:12] is "Max Read Request Size" and [7:5] is "Max Payload Size" from [Table 52] PCI Express Device Control Register.
 
 https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 
 [Table 52] PCI Express Device Control Register
-
-
-
 |Bits|Type|Default Value|Description|
 | --- | --- | --- | --- |
 |15|RW|0|Initiate Function Level Reset|
@@ -93,6 +90,8 @@ https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 |1|RW|0|Non-Fatal Error Reporting Enable|
 |0|RW|0|Correctable Error Reporting Enable|
 
+
+# 3. Change the value thru setpci
 ```
 $ sudo setpci -s 06:00.0 0x78.w
 281f
