@@ -1,3 +1,5 @@
+# This is my understanding to modify some parameters through pci config registers.
+
 # 1. Check lspci with "-vvv" options
 ```
 $ lspci |grep -i nvme
@@ -70,7 +72,7 @@ $ sudo lspci -x -vvv -s 06:00.00
 
 # 2. Find the datasheet of your NVMe device and UNDERSTAND IT
 According to the spec of Samsung Datasheet below, [Table 48] PCI Express Capability Summary says "78h" is a start address of "PCI Express Device Capabilities". 
-We can learn that [14:12] is "Max Read Request Size" and [7:5] is "Max Payload Size" from [Table 52] PCI Express Device Control Register.
+We can learn that [14:12] is "Max Read Request Size" and [7:5] is "Max Payload Size" from [Table 52] PCI Express Device Control Register. These are the targets to modify to change MaxReadRequest and MaxPayload.
 
 https://www.compuram.biz/documents/datasheet/Samsung_PM981_Rev_1_1.pdf
 
