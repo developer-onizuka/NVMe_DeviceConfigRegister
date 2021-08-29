@@ -151,7 +151,7 @@ $ sudo lspci -x -vvv -s 06:00.00 |grep MaxPayload
 			MaxPayload 256 bytes, MaxReadReq 512 bytes
 ```
 
-
+# 4. Capabilities of Silicon Motion and Phison Controller
 ```
 $ sudo lspci -vvv -x -s 02:00.0
 02:00.0 Non-Volatile memory controller: Silicon Motion, Inc. Device 2263 (rev 03) (prog-if 02 [NVM Express])
